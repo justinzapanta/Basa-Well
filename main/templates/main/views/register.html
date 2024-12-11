@@ -1,0 +1,35 @@
+{% extends 'main/parts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="h-screen w-full flex flex-col justify-center">
+        <div class="w-full flex justify-center">
+            <div class="w-[29rem] pb-8 shadow-xl border border-gray-200 rounded-2xl font-sans">
+                <form action="{% url 'sign-up' %}" method="POST">
+                    {% csrf_token %}
+                    <h1 class="font-sans text-3xl text-center font-bold mt-10">Sign Up</h1>
+                    <div class="flex justify-center mt-7">
+                        <div class="flex flex-col">
+                            <p class="text-red-400 mb-1">{{warning}}</p>
+                            <input type="email" class="w-[22rem] h-10 border border-gray-500 rounded-md pl-1" name="email" required placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center mt-4">
+                        <div class="flex flex-col">
+                            <input type="password" class="w-[22rem] h-10 border border-gray-500 rounded-md pl-1" name="password" pattern="^(?=.*[0-9])(?=.*[@!#?$%^&*])[A-Za-z\d@!#?$%^&*]{8,}$" title="Password must be at least 8 characters long, and contain at least one number and one special character like @, !, #, etc." required placeholder="Password">
+                        </div>
+                    </div>
+
+                    <!--Button-->
+                    <div class="flex justify-center w-full mt-7">
+                        <button class="w-[17rem] h-[2.7rem]  bg-slate-950 text-white font-sans rounded-full text-xl font-bold">Sign Up</button>
+                    </div>
+
+                    <p class="text-center mt-16 ">Don't have an account? <a href="#" class="text-blue-600">Sign up</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

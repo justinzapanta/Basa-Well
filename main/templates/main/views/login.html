@@ -1,0 +1,30 @@
+{% extends 'main/parts/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="h-screen w-full flex flex-col justify-center">
+        <div class="w-full flex justify-center">
+            <div class="w-[29rem] pb-8 shadow-xl border border-gray-200 rounded-2xl font-sans">
+                <h1 class="font-sans text-3xl text-center font-bold mt-10">Sign In</h1>
+                <div class="flex justify-center mt-7">
+                    <p class="text-red-400">{{warning}}</p>
+                    <input type="email" class="w-[22rem] h-10 border border-gray-500 rounded-md pl-1" required placeholder="Email">
+                </div>
+                <div class="flex justify-center mt-4">
+                    <div class="flex flex-col">
+                        <input type="password" class="w-[22rem] h-10 border border-gray-500 rounded-md pl-1" required placeholder="Password">
+                        <p class="text-end mt-2"><a href="#" class=" text-md text-blue-600">Forgot Password</a></p>
+                    </div>
+                </div>
+
+                <!--Button-->
+                <div class="flex justify-center w-full mt-7">
+                    <button class="w-[17rem] h-[2.7rem]  bg-slate-950 text-white font-sans rounded-full text-xl font-bold">Sign In</button>
+                </div>
+
+                <p class="text-center mt-16 ">Don't have an account? <a href="#" class="text-blue-600">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
