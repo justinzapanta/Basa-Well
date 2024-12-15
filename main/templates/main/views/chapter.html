@@ -3,25 +3,20 @@
 
 {% block content %}
     <div class="max-w-screen-xl mx-auto mt-32 px-10 flex flex-col">
-        <div class="w-full flex  space-x-4 mb-4">
-            <div class="flex-1 h-full flex my-auto">
-                <a href="/detail/{{manga_id}}/{{title}}" class="font-bold text-2xl">{{title}}</a>
-            </div>
-
-            <div class="mr-10 h-full my-auto">
-                <h1 class="font-bold text-lg">Chapter: {{current_chapter}}</h1>
-            </div>
+        <a href="/detail/{{manga_id}}/{{title}}" class="font-bold text-center md:text-2xl text-sm">{{title}}</a>
+        <h1 class="font-bold text-center md:text-lg text-sm">Chapter: {{current_chapter}}</h1>
+        <div class="w-full flex md:justify-end  space-x-2 mb-4 mt-4">
             {% if prev != 0 %}
-                <a href="/chapter/{{id}}/{{prev}}"><button class="font-bold px-12 py-1.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Prev</button></a>
+                <a href="/chapter/{{id}}/{{prev}}"><button class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Prev</button></a>
             {% else %}
-                <a><div disabled class="font-bold px-12 py-1.5 bg-gray-300 text-white rounded-md">Prev</div></a>
+                <a><div disabled class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 bg-gray-300 text-white rounded-md">Prev</div></a>
             {% endif %}
 
 
             {% if next|add:"-1" != latest %}
-                <a href="/chapter/{{id}}/{{next}}"><button class="font-bold px-12 py-1.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Next</button></a>
+                <a href="/chapter/{{id}}/{{next}}"><button class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Next</button></a>
             {% else %}
-                <a><div disabled class="font-bold px-12 py-1.5 bg-gray-300 text-white rounded-md">Next</div></a>
+                <a><div disabled class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 bg-gray-300 text-white rounded-md">Next</div></a>
             {% endif %}
         </div>
         {% for chapter in chapters  %}
@@ -30,18 +25,18 @@
 
         <div class="w-full flex justify-end space-x-4 mt-7 mb-10">
             <div class="mr-10 h-full my-auto">
-                <h1 class="font-bold text-lg">Chapter: {{current_chapter}}</h1>
+                <h1 class="font-bold text-sm md:text-lg">Chapter: {{current_chapter}}</h1>
             </div>
             {% if prev != 0 %}
-                <a href="/chapter/{{id}}/{{prev}}"><button class="font-bold px-12 py-1.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Prev</button></a>
+                <a href="/chapter/{{id}}/{{prev}}"><button class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Prev</button></a>
             {% else %}
-                <a><div disabled class="font-bold px-12 py-1.5 bg-gray-300 text-white rounded-md">Prev</div></a>
+                <a><div disabled class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 bg-gray-300 text-white rounded-md">Prev</div></a>
             {% endif %}
 
             {% if next|add:"-1" != latest %}
-                <a href="/chapter/{{id}}/{{next}}"><button class="font-bold px-12 py-1.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Next</button></a>
+                <a href="/chapter/{{id}}/{{next}}"><button class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 hover:text-gray-200 bg-slate-950 text-white rounded-md">Next</button></a>
             {% else %}
-                <a><div disabled class="font-bold px-12 py-1.5 bg-gray-300 text-white rounded-md">Next</div></a>
+                <a><div disabled class="font-bold text-sm md:text-base md:px-12 md:py-1.5 px-8 py-0.5 bg-gray-300 text-white rounded-md">Next</div></a>
             {% endif %}
         </div>
     </div>
